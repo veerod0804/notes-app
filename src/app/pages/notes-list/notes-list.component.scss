@@ -1,0 +1,18 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto; //centers the box
+
+    padding-top: 50px;
+}
+
+//adds the small space between the filter bar and the notes list
+.notes-list {
+    margin-top: 35px;
+}
+
+app-note-card {
+    display: block;
+    margin-bottom: 25px;
+}
