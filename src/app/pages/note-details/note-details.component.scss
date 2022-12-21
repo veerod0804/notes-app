@@ -1,0 +1,22 @@
+@import '../../../main-styles.scss';
+
+.form-container {
+    max-width: 500px;
+
+    margin: auto;
+    margin-top: 50px;
+}
+
+//nested so that the "title" section of the form displays as red if it is invalid since this field is required! if line 11 was absent, the whole form would be red.
+input, textarea {
+    &.ng-invalid.ng-touched {
+        border-color: red;
+        
+        &:focus {box-shadow: 0px 0px 0px 2px rgba(red, 0.1);
+        }
+}
+}
+
+#submitButton {
+    background: $purple;
+}

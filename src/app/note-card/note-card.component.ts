@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -11,6 +11,10 @@ export class NoteCardComponent implements AfterViewInit {
   title!: string;
   @Input('body')
   body!: string;
+  @Input()
+  link!: string;
+
+  @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
 
   @ViewChild('truncator') truncator: any | ElementRef<HTMLElement>;
   @ViewChild('bodyText') bodyText:any |ElementRef<HTMLElement> ;
@@ -31,6 +35,10 @@ export class NoteCardComponent implements AfterViewInit {
       // else (there is no text overflow), hide the fade out truncator
       this.renderer.setStyle(this.truncator.nativeElement, 'display', 'none');
     }
+  }
+
+  onXButtonClick() {
+    this.deleteEvent.emit();
   }
 
 }
