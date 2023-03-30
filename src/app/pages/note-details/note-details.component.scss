@@ -7,7 +7,9 @@
     margin-top: 50px;
 }
 
-//nested so that the "title" section of the form displays as red if it is invalid since this field is required! if line 11 was absent, the whole form would be red.
+//nested so that the "title" section of the form displays as red if it is invalid
+//  since this field is required! if line 11 was absent, 
+//  the whole form would be red.
 input, textarea {
     &.ng-invalid.ng-touched {
         border-color: red;
